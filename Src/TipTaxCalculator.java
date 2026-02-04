@@ -16,14 +16,14 @@ public class TipTaxCalculator {
 
         answer.close();
 
+        double tax = CalculateAmount.calTaxAmount(billAmount,taxRate);
+        double tip = CalculateAmount.calTipAmount(billAmount,tipRate);
+
         System.out.println(
                 "Bill amount: " + billAmount + "\nTax Amount: " + CalculateAmount.calTaxAmount(billAmount,taxRate)
         + "\nTip Amount: "+ CalculateAmount.calTipAmount(billAmount,tipRate) +
                         "\nTotal (raw): " +
-                CalculateAmount.totalRawBill(billAmount, CalculateAmount.calTipAmount(billAmount,tipRate),
-                        CalculateAmount.calTaxAmount(billAmount,taxRate))+ "\nTotal (rounded): " +
-                CalculateAmount.totalRoundBill(billAmount,
-                CalculateAmount.calTipAmount(billAmount,tipRate),CalculateAmount.calTaxAmount(
-                        billAmount,taxRate)));
+                CalculateAmount.totalRawBill(billAmount,tip,tax)+ "\nTotal (rounded): " +
+                CalculateAmount.totalRoundBill(billAmount,tip,tax));
     }
 }
