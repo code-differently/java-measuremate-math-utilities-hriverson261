@@ -14,6 +14,8 @@ public class TipTaxCalculator {
         System.out.println("Input Tip rate as a percentage: ");
         double tipRate = answer.nextDouble();
 
+        answer.close();
+
         System.out.println(
                 "Bill amount: " + billAmount + "\nTax Amount: " + CalculateAmount.calTaxAmount(billAmount,taxRate)
         + "\nTip Amount: "+ CalculateAmount.calTipAmount(billAmount,tipRate) +
